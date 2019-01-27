@@ -24,26 +24,8 @@ quote = choice(all_quotes)
 Text_data = quote['text']
 print("The data for text mining:",'\n',Text_data,'\n')
 
-import nltk
-from nltk.tokenize import RegexpTokenizer
+from NLP_Func import NLP_func
 
-token_Data = RegexpTokenizer(r'\w+')
-filtered_data =  token_Data.tokenize(Text_data)
-
-from nltk.corpus import stopwords
-# nltk.download('punkt')
-
-
-stop_words = set(stopwords.words('english'))
-#print(stop_words)
-
-print("List if Words without punctuation:",'\n',filtered_data)
-words = []
-for word in filtered_data:
-  if word.lower() not in stop_words:
-    words.append(word)
-print("List if words without stopwords:",'\n',words)    
-POS = nltk.pos_tag(words)
-print("Parts of speech:",'\n',POS)
+NLP_func(Text_data)
 
 
