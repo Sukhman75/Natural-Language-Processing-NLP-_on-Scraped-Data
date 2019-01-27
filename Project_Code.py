@@ -23,7 +23,7 @@ quote = choice(all_quotes)
 Text_data = quote['text']
 print("The data for text mining:",'\n',Text_data,'\n')
 
-#Build A module for making the NLP function universal, that can be used for any type of data. 
+#Build A module for making the NLP function universal, that can be used for any type of text(English Only). 
 
 #CALLING THE FUNCTION FROM A MODULE
 from NLP_Func import NLP_func
