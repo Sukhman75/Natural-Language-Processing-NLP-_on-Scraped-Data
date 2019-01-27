@@ -2,6 +2,7 @@ def NLP_func(data):
 	import pandas as pd 
 	import matplotlib.pyplot as plt 
 	import nltk
+#Step 2 NLP
 	from nltk.tokenize import RegexpTokenizer
 	token_Data = RegexpTokenizer(r'\w+')
 	filtered_data =  token_Data.tokenize(data)
@@ -21,7 +22,8 @@ def NLP_func(data):
 	print("List if words without stopwords:",'\n',words,'\n')    
 	POS = nltk.pos_tag(words)
 	print("Parts of speech:",'\n',POS)
-	
+#Step 3 Frequency Distribution plot
+		
 	Pos_List = []
 	i = 0
 	for i in range(len(POS)):
