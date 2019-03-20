@@ -2,15 +2,17 @@ def NLP_func(data):
 	import pandas as pd 
 	import matplotlib.pyplot as plt 
 	import nltk
+	import textblob
 #Step 2 NLP
 	from nltk.tokenize import RegexpTokenizer
 	token_Data = RegexpTokenizer(r'\w+')
+	
 	filtered_data =  token_Data.tokenize(data)
 
 	from nltk.corpus import stopwords
 # nltk.download('punkt')
 
-
+	
 	stop_words = set(stopwords.words('english'))
 #print(stop_words)
 
@@ -22,6 +24,12 @@ def NLP_func(data):
 	print("List if words without stopwords:",'\n',words,'\n')    
 	POS = nltk.pos_tag(words)
 	print("Parts of speech:",'\n',POS)
+
+#Step 3 Sentiment Polarity of the Scrapped Text
+	from textblob import TextBlob
+	
+	print("The Sentiment Polarity of Scrapped data is: ",TextBlob(data).sentiment.polarity)
+
 #Step 3 Frequency Distribution plot
 		
 	Pos_List = []
