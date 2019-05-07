@@ -27,8 +27,9 @@ def NLP_func(data):
 
 #Step 3 Sentiment Polarity of the Scrapped Text
 	from textblob import TextBlob
-	
-	print("The Sentiment Polarity of Scrapped data is: ",TextBlob(data).sentiment.polarity)
+	sentence = " ".join([sen for sen in words])
+	print("The Final Cleaned_Sentence: ",sentence)
+	print("The Sentiment Polarity of Scrapped data is: ",TextBlob(sentence).sentiment.polarity)
 
 #Step 3 Frequency Distribution plot
 		
